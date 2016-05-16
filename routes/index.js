@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-	var ipAddress = req.ip;
+	var ipAddress = req.ip.split(/[:]+/).pop();
 	var header = req.headers;
 	var language = header["accept-language"];
 	language = language.split(',')[0];
